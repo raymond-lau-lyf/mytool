@@ -1,0 +1,8 @@
+<launch>
+    <node name="rebvo_node" pkg="rebvo" type="rebvo" output="screen">
+        <rosparam command="load" file="$(find rebvo)/cfg/sthereo.yaml" />
+        <param name="rebvo/imu_topic" value="/imu/data_raw" />
+        <param name="rebvo/image_topic" value="/convert_image" />
+        <param name="rebvo/frame_id" value="rebvo_frame" />
+    </node>
+</launch> 

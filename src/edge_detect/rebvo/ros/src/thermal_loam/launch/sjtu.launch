@@ -1,0 +1,8 @@
+<launch>
+    <node name="rebvo_node" pkg="rebvo" type="rebvo" output="screen">
+        <rosparam command="load" file="$(find rebvo)/cfg/sjtu.yaml" />
+        <!-- <param name="rebvo/image_topic" value="/camera/color/image_raw"/> -->
+        <param name="rebvo/image_topic" value="/camera/image_color/" />
+        <param name="rebvo/frame_id" value="rebvo_frame" />
+    </node>
+</launch> 
