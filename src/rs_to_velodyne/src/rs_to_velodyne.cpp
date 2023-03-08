@@ -206,9 +206,9 @@ int main(int argc, char **argv) {
         output_type = argv[2];
 
         if (std::strcmp("XYZI", argv[1]) == 0) {
-            subRobosensePC = nh.subscribe("//os_cloud_node/points", 1, rsHandler_XYZI);
+            subRobosensePC = nh.subscribe("/os_cloud_node/points", 1, rsHandler_XYZI);
         } else if (std::strcmp("XYZIRT", argv[1]) == 0) {
-            subRobosensePC = nh.subscribe("//os_cloud_node/points", 1, rsHandler_XYZIRT);
+            subRobosensePC = nh.subscribe("/os_cloud_node/points", 1, rsHandler_XYZIRT);
         } else {
             ROS_ERROR(argv[1]);
             ROS_ERROR("Unsupported input pointcloud type. Currently only support XYZI and XYZIRT.");
@@ -217,7 +217,7 @@ int main(int argc, char **argv) {
     }
     pubRobosensePC = nh.advertise<sensor_msgs::PointCloud2>("/velodyne_points", 1);
 
-    ROS_INFO("Listening to //os_cloud_node/points ......");
+    ROS_INFO("Listening to /os_cloud_node/points ......");
     ros::spin();
     return 0;
 }
