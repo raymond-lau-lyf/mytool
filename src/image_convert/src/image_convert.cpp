@@ -346,7 +346,7 @@ int main(int argc, char **argv) {
     pub_image = nh.advertise<sensor_msgs::Image>("/convert_image",100);
     // ros::Subscriber sub_img = nh.subscribe("/convert_image16", 100, callback);
     ros::Subscriber sub_img = nh.subscribe("/thermal_14bit/left/image_raw", 100, callback);
-    //ros::Subscriber sub_img = nh.subscribe("/thermal_image_raw", 100, callback);
+    // ros::Subscriber sub_img = nh.subscribe("/thermal_image_raw", 100, callback);
     //ros::Subscriber sub_img = nh.subscribe("/boson/image_16bit", 100, callback);
     ros::Rate loop_rate(30);
     while (nh.ok()) {

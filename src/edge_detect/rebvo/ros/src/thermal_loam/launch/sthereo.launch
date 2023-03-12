@@ -3,6 +3,10 @@
         <rosparam command="load" file="$(find rebvo)/cfg/sthereo.yaml" />
         <param name="rebvo/imu_topic" value="/imu/data_raw" />
         <param name="rebvo/image_topic" value="/convert_image" />
+        <!-- <param name="rebvo/image_topic" value="/convert_image/downsample" /> -->
         <param name="rebvo/frame_id" value="rebvo_frame" />
     </node>
+
+    <!-- <node name="throttle" pkg="topic_tools" type="throttle" output="screen" args="messages /convert_image 8.0 /convert_image/downsample"/> -->
+
 </launch> 
