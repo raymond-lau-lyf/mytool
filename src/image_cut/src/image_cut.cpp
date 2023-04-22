@@ -19,7 +19,7 @@ void callback(const sensor_msgs::ImageConstPtr& img_msg)
     cv::Mat mask(512, 640, CV_8UC1, cv::Scalar(0)); // create a black mask image with the desired size
     cv::rectangle(mask, cv::Rect(0, 0, 640, 400), cv::Scalar(255), -1); // draw a white rectangle in the top half
     cv::Mat cut_image=raw_image.clone();
-    cv::bitwise_and(raw_image,mask,cut_image);
+    cv::bitwise_and(raw_image,mask,cut_image); //TODO
 
 
     sensor_msgs::ImagePtr output_msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", cut_image).toImageMsg();

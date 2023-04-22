@@ -278,6 +278,7 @@ void callback(const sensor_msgs::ImageConstPtr& img_msg)
 
     cv::Mat mask(512, 640, CV_8UC1, cv::Scalar(0)); // create a black mask image with the desired size
     cv::rectangle(mask, cv::Rect(0, 0, 640, 410), cv::Scalar(255), -1); // draw a white rectangle in the top half
+    // cv::rectangle(mask, cv::Rect(0, 0, 640, 512), cv::Scalar(255), -1); // draw a white rectangle in the top half //TODO
 
     raw_image.convertTo(img8, CV_8UC1,1 / 256.0); // convert image to 8bit
     normalize(raw_image, tmp, 0, 255, NORM_MINMAX,-1,mask);

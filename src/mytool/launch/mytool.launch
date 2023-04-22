@@ -1,6 +1,6 @@
 <launch>
     <!-- <node pkg="rs_to_velodyne" type="rs_to_velodyne" name="rs_to_velodyne" output="screen" args="XYZI XYZIRT" /> -->
-    <node pkg="rslidar_to_velodyne" type="rslidar_to_velodyne" name="rslidar_to_velodyne" output="screen" />
+    <!-- <node pkg="rslidar_to_velodyne" type="rslidar_to_velodyne" name="rslidar_to_velodyne" output="screen" /> -->
     <node pkg="image_cut" type="image_cut" name="image_cut" output="screen"/>
     <node pkg="image_convert" type="image_convert" name="image_convert" output="screen"/>
     <include file="$(find rebvo)/launch/sthereo.launch"/>
