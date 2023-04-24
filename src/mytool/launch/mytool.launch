@@ -1,7 +1,7 @@
 <launch>
     <!-- <node pkg="rs_to_velodyne" type="rs_to_velodyne" name="rs_to_velodyne" output="screen" args="XYZI XYZIRT" /> -->
     <!-- <node pkg="rslidar_to_velodyne" type="rslidar_to_velodyne" name="rslidar_to_velodyne" output="screen" /> -->
-    <node pkg="image_cut" type="image_cut" name="image_cut" output="screen"/>
-    <node pkg="image_convert" type="image_convert" name="image_convert" output="screen"/>
+    <node pkg="image_cut" type="image_cut" name="image_cut" output="screen" launch-prefix="gnome-terminal --geometry=80x25+900+600 -t image_cut -- gdb -ex run --args"/>
+    <node pkg="image_convert" type="image_convert" name="image_convert" output="screen" launch-prefix="gnome-terminal --geometry=80x25+1800+10 -t image_convert -- gdb -ex run --args"/>
     <include file="$(find rebvo)/launch/sthereo.launch"/>
 </launch>
