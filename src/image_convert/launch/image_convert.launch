@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="image_convert" type="image_convert" name="image_convert" output="screen" launch-prefix="gnome-terminal --geometry=80x25+1800+10 -t image_convert -- gdb -ex run --args"></node>
+
+</launch>

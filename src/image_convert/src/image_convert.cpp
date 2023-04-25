@@ -5,6 +5,7 @@
 #include <opencv2/opencv.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <std_msgs/Int32.h>
+#include <string>
 using namespace std;
 using namespace cv;
 ros::Publisher pub_image;
@@ -300,11 +301,14 @@ void callback(const sensor_msgs::ImageConstPtr& img_msg)
     pub_image.publish(output_msg);
 }
 
+std::string IMAGE_TOPIC;
 
 int main(int argc, char **argv) {
 
     ros::init(argc, argv, "image_convert"); 
-    ros::NodeHandle nh;    
+    ros::NodeHandle nh;   
+
+    nh.getParam("img_topic",IMAGE_TOPIC); 
 
     uchar vec_gamma_1_4[256];
     uchar vec_gamma_1_2[256];
@@ -346,7 +350,7 @@ int main(int argc, char **argv) {
 
     pub_image = nh.advertise<sensor_msgs::Image>("/convert_image",100);
     // ros::Subscriber sub_img = nh.subscribe("/convert_image16", 100, callback);
-    ros::Subscriber sub_img = nh.subscribe("/thermal_14bit/left/image_raw", 100, callback);
+    ros::Subscriber sub_img = nh.subscribe(IMAGE_TOPIC, 100, callback);
     // ros::Subscriber sub_img = nh.subscribe("/thermal_image_raw", 100, callback);
     //ros::Subscriber sub_img = nh.subscribe("/boson/image_16bit", 100, callback);
     ros::Rate loop_rate(30);

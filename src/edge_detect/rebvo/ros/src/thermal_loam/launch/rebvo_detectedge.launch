@@ -1,6 +1,6 @@
 <launch>
-    <node name="rebvo_node" pkg="rebvo" type="rebvo" output="screen" launch-prefix="gnome-terminal --geometry=80x25+1800+600 -t rebvo_node -- gdb -ex run --args">
-        <rosparam command="load" file="$(find rebvo)/cfg/sthereo.yaml" />
+    <node name="rebvo_node" pkg="rebvo" type="rebvo" output="screen" launch-prefix="gnome-terminal --geometry=80x25+900+600 -t rebvo_node -- gdb -ex run --args">
+        <rosparam command="load" file="$(find rebvo)/cfg/cfg.yaml" />
         <param name="rebvo/imu_topic" value="/imu/data_raw" />
         <param name="rebvo/image_topic" value="/convert_image" />
         <!-- <param name="rebvo/image_topic" value="/convert_image/downsample" /> -->
